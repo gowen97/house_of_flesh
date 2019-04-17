@@ -7,7 +7,9 @@ Commands describe the input the account can do to the game.
 
 from evennia import Command as BaseCommand
 from evennia import default_cmds
-from evennia.contrib.menu_login import CmdUnconnectedLook
+from evennia import syscmdkeys
+from evennia.contrib.menu_login import CmdUnloggedinLook
+from evennia.utils.evmenu import EvMenu
 
 
 class Command(BaseCommand):
@@ -32,7 +34,108 @@ class Command(BaseCommand):
     """
     pass
 
-trying to get menu_login contrib to work
+# class CmdCreateUniqueRoom(Command):
+#     """
+#     Create the players unique room
+#     """
+#         caller = self.caller
+#         key = "unique"
+#
+#         # if not self.lhs:
+#         #     string = "Usage: @dig[/teleport] <roomname>[;alias;alias...]" \
+#         #              "[:parent] [= <exit_there>"
+#         #     string += "[;alias;alias..][:parent]] "
+#         #     string += "[, <exit_back_here>[;alias;alias..][:parent]]"
+#         #     caller.msg(string)
+#         #     return
+#         #
+#         # room = self.lhs_objs[0]
+#         #
+#         # if not room["name"]:
+#         #     caller.msg("You must supply a new room name.")
+#         #     return
+#         # location = caller.location
+#
+#         # Create the new room
+#         # typeclass = room['option']
+#         # if not typeclass:
+#         typeclass = settings.BASE_ROOM_TYPECLASS
+#
+#         # create room
+#         new_room = create.create_object(typeclass, room[caller + "'s room'"], #???
+#                                         report_to=caller)
+#         lockstring = "edit:none()"
+#         new_room.locks.add(lockstring)
+#         # alias_string = ""
+#         # if new_room.aliases.all():
+#         #     alias_string = " (%s)" % ", ".join(new_room.aliases.all())
+#         room_string = "Created %s room for %s." % (
+#                 new_room, caller)
+#
+#         # create exit to room
+#
+#         exit_to_string = ""
+#         exit_back_string = ""
+#
+#         if self.rhs_objs:
+#             to_exit = self.rhs_objs[0]
+#             if not to_exit["name"]:
+#                 exit_to_string = "\nNo exit created to new room."
+#             elif not location:
+#                 exit_to_string = "\nYou cannot create an exit from a None-location."
+#             else:
+#                 # Build the exit to the new room from the current one
+#                 typeclass = to_exit["option"]
+#                 if not typeclass:
+#                     typeclass = settings.BASE_EXIT_TYPECLASS
+#
+#                 new_to_exit = create.create_object(typeclass, to_exit["name"],
+#                                                    location,
+#                                                    aliases=to_exit["aliases"],
+#                                                    locks=lockstring,
+#                                                    destination=new_room,
+#                                                    report_to=caller)
+#                 alias_string = ""
+#                 if new_to_exit.aliases.all():
+#                     alias_string = " (%s)" % ", ".join(new_to_exit.aliases.all())
+#                 exit_to_string = "\nCreated Exit from %s to %s: %s(%s)%s."
+#                 exit_to_string = exit_to_string % (location.name,
+#                                                    new_room.name,
+#                                                    new_to_exit,
+#                                                    new_to_exit.dbref,
+#                                                    alias_string)
+#
+#         # Create exit back from new room
+#
+#         if len(self.rhs_objs) > 1:
+#             # Building the exit back to the current room
+#             back_exit = self.rhs_objs[1]
+#             if not back_exit["name"]:
+#                 exit_back_string = "\nNo back exit created."
+#             elif not location:
+#                 exit_back_string = "\nYou cannot create an exit back to a None-location."
+#             else:
+#                 typeclass = back_exit["option"]
+#                 if not typeclass:
+#                     typeclass = settings.BASE_EXIT_TYPECLASS
+#                 new_back_exit = create.create_object(typeclass,
+#                                                      back_exit["name"],
+#                                                      new_room,
+#                                                      aliases=back_exit["aliases"],
+#                                                      locks=lockstring,
+#                                                      destination=location,
+#                                                      report_to=caller)
+#                 alias_string = ""
+#                 if new_back_exit.aliases.all():
+#                     alias_string = " (%s)" % ", ".join(new_back_exit.aliases.all())
+#                 exit_back_string = "\nCreated Exit back from %s to %s: %s(%s)%s."
+#                 exit_back_string = exit_back_string % (new_room.name,
+#                                                        location.name,
+#                                                        new_back_exit,
+#                                                        new_back_exit.dbref,
+#                                                        alias_string)
+#         caller.msg("%s%s%s" % (room_string, exit_to_string, exit_back_string))
+#trying to get menu_login contrib to work
 class CmdUnloggedinLook(Command):
     """
     An unloggedin version of the look command. This is called by the server
@@ -48,6 +151,13 @@ class CmdUnloggedinLook(Command):
         EvMenu(self.caller, "evennia.contrib.menu_login",
                startnode="start", auto_look=False, auto_quit=False,
                cmd_on_exit=None, node_formatter=_formatter)
+
+class CmdTestMenuNote(Command):
+    key = "note"
+
+    def func(self):
+        # Here we look in the file mymenu.py for the function "node_set_note_name". And yes, we have to pass "self.caller" as the first argument, the tutorial isn't clear on that point.
+        EvMenu(self.caller, "world.mymenu", startnode="node_set_note_name")
 
 # -------------------------------------------------------------
 #

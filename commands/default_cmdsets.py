@@ -15,9 +15,10 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 """
 
 from evennia import default_cmds
-#from command import CmdUnloggedinLook
+# from command import CmdUnloggedinLook
 # from evennia.contrib.menu_login import CmdUnloggedinLook
 # from evennia.contrib.menu_login import UnloggedinCmdSet
+from command import CmdTestMenuNote
 
 
 
@@ -37,6 +38,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         #
         # any commands you add below will overload the default ones.
         #
+        self.add(CmdTestMenuNote())
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
@@ -56,32 +58,32 @@ class AccountCmdSet(default_cmds.AccountCmdSet):
         #
         # any commands you add below will overload the default ones.
         #
-
-
-# class UnloggedinCmdSet(default_cmds.UnloggedinCmdSet):
-#     """
-#     Command set available to the Session before being logged in.  This
-#     holds commands like creating a new account, logging in, etc.
-#     """
-#     key = "DefaultUnloggedin"
-#
-#     def at_cmdset_creation(self):
-#         """
-#         Populates the cmdset
-#         """
-#         super(UnloggedinCmdSet, self).at_cmdset_creation()
-#         #
-#         # any commands you add below will overload the default ones.
-#         #
+        self.add(CmdTestMenuNote())
 
 class UnloggedinCmdSet(default_cmds.UnloggedinCmdSet):
-    "Cmdset for the unloggedin state"
+    """
+    Command set available to the Session before being logged in.  This
+    holds commands like creating a new account, logging in, etc.
+    """
     key = "DefaultUnloggedin"
-    priority = 0
 
     def at_cmdset_creation(self):
-        "Called when cmdset is first created."
-        self.add(CmdUnconnectedLook())
+        """
+        Populates the cmdset
+        """
+        super(UnloggedinCmdSet, self).at_cmdset_creation()
+        #
+        # any commands you add below will overload the default ones.
+        #
+
+# class UnloggedinCmdSet(default_cmds.UnloggedinCmdSet):
+#     "Cmdset for the unloggedin state"
+#     key = "DefaultUnloggedin"
+#     priority = 0
+#
+#     def at_cmdset_creation(self):
+#         "Called when cmdset is first created."
+#         self.add(CmdUnloggedinLook())
 
 
 class SessionCmdSet(default_cmds.SessionCmdSet):

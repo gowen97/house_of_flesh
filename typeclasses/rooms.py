@@ -19,3 +19,9 @@ class Room(DefaultRoom):
     properties and methods available on all Objects.
     """
     pass
+
+class UniqueRoom(DefaultRoom):
+    """
+    using this to try to change room name
+    """
+    pass

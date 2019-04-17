@@ -33,7 +33,10 @@ from evennia.settings_default import *
 
 # This is the name of your game. Make it catchy!
 SERVERNAME = "house_of_flesh"
-CMDSET_UNLOGGIN = "contrib.menu_login.UnloggedinCmdSet"
+#CMDSET_UNLOGGIN = "contrib.menu_login.UnloggedinCmdSet"
+PERMISSION_GUEST_DEFAULT = "Builder"
+PERMISSION_ACCOUNT_DEFAULT = "Builder"
+
 
 
 ######################################################################
