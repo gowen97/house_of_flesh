@@ -113,9 +113,8 @@ class CmdTalk(default_cmds.MuxCommand):
 
         # Initiate the menu. Change this if you are putting this on
         # some other custom NPC class.
-        #accountname = user.username
         EvMenu(self.caller, "typeclasses.talkative_daemon",
-               startnode="start_node", cmd_on_exit="@dig room %s = to room %s,to debug room" % (user.username, user.username))
+               startnode="start_node", cmd_on_exit="@dig a room for %s : typeclasses.rooms.UniqueRoom = to a room for %s,to debug room" % (self.caller, self.caller))
 
 
 class TalkingCmdSet(CmdSet):

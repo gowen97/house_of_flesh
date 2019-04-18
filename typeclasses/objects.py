@@ -11,9 +11,10 @@ inheritance.
 
 """
 from evennia import DefaultObject
+from evennia.contrib.ingame_python.typeclasses import EventObject
 
 
-class Object(DefaultObject):
+class Object(EventObject):
     """
     This is the root typeclass object, implementing an in-game Evennia
     game object, such as having a location, being able to be
@@ -160,4 +161,50 @@ class Object(DefaultObject):
                                  object speaks
 
      """
+class Light(Object):
+    """
+    These are the light source objects. TO DO: put them on timers?
+    """
+    pass
+
+class Weapon(Object):
+    """
+    These are the weapon objects. TO DO: make them deal damage?
+    """
+    pass
+
+class Media(Object):
+    """
+    These are the media objects. TO DO: make them playable?
+    """
+    pass
+
+class Food(Object):
+    """
+    These are the food objects. TO DO: make them consumable?
+    """
+    pass
+
+class Flora(Object):
+    """
+    These are the flora objects. TO DO: make them move/grow?
+    """
+    pass
+
+class Furniture(Object):
+    """
+    These are furniture objects. TO DO: make them functional?
+    """
+    pass
+
+class Sounds(Object):
+    """
+    These are audio sources. TO DO: uhhh
+    """
+    pass
+
+class Misc(Object):
+    """
+    These are uncategorizable things. TO DO: mmm
+    """
     pass

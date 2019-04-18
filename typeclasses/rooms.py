@@ -22,6 +22,14 @@ class Room(DefaultRoom):
 
 class UniqueRoom(DefaultRoom):
     """
-    using this to try to change room name
+    using this to add unique description
     """
-    pass
+    # change locks so only the original creator can edit the room
+    # change default description
+    def at_object_creation(self):
+        """
+        called when object is first created
+        """
+        self.db.desc = "This is %s's room." (% self.caller)
+
+    #when and how to message the player character to let them know about how to use their room?
