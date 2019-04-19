@@ -20,11 +20,11 @@ from evennia import utils
 
 CONNECTION_SCREEN = """
 |b==============================================================|n
- Welcome to |g{}|n, version {}!
+ Welcome to |g{}|n.
 
 Please type "CONNECT" to generate a new name and enter the house of flesh.
 If you are a moderator, please use oldconnect to log in to your account.
 
  Enter |whelp|n for more info. |wlook|n will re-show this screen.
 |b==============================================================|n""" \
-    .format(settings.SERVERNAME, utils.get_evennia_version())
+    .format(settings.SERVERNAME)

@@ -159,6 +159,8 @@ class CmdTestMenuNote(Command):
         # Here we look in the file mymenu.py for the function "node_set_note_name". And yes, we have to pass "self.caller" as the first argument, the tutorial isn't clear on that point.
         EvMenu(self.caller, "world.mymenu", startnode="node_set_note_name")
 
+
+
 # -------------------------------------------------------------
 #
 # The default commands inherit from
