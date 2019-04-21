@@ -20,6 +20,14 @@ class Room(DefaultRoom):
     """
     pass
 
+class DebugRoom(DefaultRoom):
+    """
+    using this to message about more
+    """
+    def at_object_receive(self, new_arrival, source_location):
+        self.caller.execute_cmd("more")
+        #hopefully this works? TODO test me when moving over tmrw
+
 class UniqueRoom(DefaultRoom):
     """
     using this to add unique description

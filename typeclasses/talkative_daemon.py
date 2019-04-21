@@ -34,6 +34,13 @@ def start_node(caller): #originally menu_start_node currently throwing an error
 
     return text, options
 
+#  TODO try to check if the room already exists before creating it
+# for now hope that nobody talks to him twice
+# def end_server_daemon(caller):
+#     target = caller.search()
+#     if ()
+#     caller.execute_cmd("@dig a room for %s : typeclasses.rooms.UniqueRoom = to a room for %s,to debug room" % (caller, caller))
+
 
 def info1(caller):
     text = "'This is the debug room. This is where it begins.'"
@@ -84,6 +91,7 @@ def END(caller):
     text = "'Goodbye, then.'"
 
     options = ()
+    # TODO try to run @dig from here to only dig the room the first time
 
     return text, options
 

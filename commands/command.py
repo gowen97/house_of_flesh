@@ -10,6 +10,7 @@ from evennia import default_cmds
 from evennia import syscmdkeys
 from evennia.contrib.menu_login import CmdUnloggedinLook
 from evennia.utils.evmenu import EvMenu
+from evennia.commands.default import CmdHelp
 
 
 class Command(BaseCommand):
@@ -158,6 +159,22 @@ class CmdTestMenuNote(Command):
     def func(self):
         # Here we look in the file mymenu.py for the function "node_set_note_name". And yes, we have to pass "self.caller" as the first argument, the tutorial isn't clear on that point.
         EvMenu(self.caller, "world.mymenu", startnode="node_set_note_name")
+
+class CmdMore(Command):
+    """
+    nvm just writing a new command to serve as the help command
+    """
+    key = "more"
+
+    def func(self):
+        #print stuff
+        caller.msg("You can type |Rlook|n to look at rooms or objects. Try typing |Rlook|n or |Rlook server daemon.|n")
+        caller.msg("You can type |Rtalk|n to talk to the server daemon. Try typing |Rtalk server daemon.|n")
+        caller.msg("You can go from place to place by typing the name of the exit. Try typing |Rto grace's room.|n")
+        caller.msg("Use |R@spawn|n to place symbols within the room that is generated for you after talking to the server daemon.")
+        caller.msg("Use |Rnote|n to leave a note behind when you visit someone else's room.")
+
+
 
 
 

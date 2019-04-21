@@ -19,6 +19,7 @@ from evennia import default_cmds
 # from evennia.contrib.menu_login import CmdUnloggedinLook
 # from evennia.contrib.menu_login import UnloggedinCmdSet
 from command import CmdTestMenuNote
+from command import CmdMore
 
 
 
@@ -39,6 +40,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         # any commands you add below will overload the default ones.
         #
         self.add(CmdTestMenuNote())
+        self.add(CmdMore())
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
