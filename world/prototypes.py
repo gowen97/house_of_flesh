@@ -72,6 +72,8 @@ See the `@spawn` command and `evennia.utils.spawner` for more info.
 # "prototype" : ("GOBLIN_WIZARD", "ARCHWIZARD_MIXIN")
 #}
 
+
+# TODO add static, stairs, etc
 #LIGHTS HERE
 #add permissions, aliases, and locks!
 NEON = {

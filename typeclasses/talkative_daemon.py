@@ -88,7 +88,7 @@ def info4(caller):
 
 
 def END(caller):
-    text = "'Goodbye, then.'"
+    text = "'Goodbye, then.' The server daemon says. 'Ah - before I forget. When you turn away from me, your room will be created, and you can go there. I would recommend going |rto Grace's room|n first, though.'"
 
     options = ()
     # TODO try to run @dig from here to only dig the room the first time
@@ -122,7 +122,7 @@ class CmdTalk(default_cmds.MuxCommand):
         # Initiate the menu. Change this if you are putting this on
         # some other custom NPC class.
         EvMenu(self.caller, "typeclasses.talkative_daemon",
-               startnode="start_node", cmd_on_exit="@dig a room for %s : typeclasses.rooms.UniqueRoom = to a room for %s,to debug room" % (self.caller, self.caller))
+               startnode="start_node", cmd_on_exit="@dig a room for %s : typeclasses.rooms.UniqueRoom = to %s's room,to debug room" % (self.caller, self.caller))
 
 
 class TalkingCmdSet(CmdSet):

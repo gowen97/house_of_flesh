@@ -54,8 +54,8 @@ class UniqueRoom(DefaultRoom):
             # new arrival allows us to message the account in the room as it arrives
             # TODO make this message only show up to the person who created the room
             # check if name matches name in room
-            new_arrival.msg("Welcome to your room. Type @SPAWN to place objects in the room to represent a fantasy of yours.")
-            new_arrival.msg("What kind of fantasy? A sex dream, a desire, some kind of need or yearning.")
-            new_arrival.msg("What is lurking inside your entrails? Gesture to it here. No need to be explicit. Suggest it.")
+            new_arrival.msg("|b Welcome to your room. Type @SPAWN to place objects in the room to represent a fantasy of yours.")
+            new_arrival.msg("|b What kind of fantasy? A sex dream, a desire, some kind of need or yearning.")
+            new_arrival.msg("|b What is lurking inside your entrails? Gesture to it here. No need to be explicit. Suggest it.")
 
     #when and how to message the player character to let them know about how to use their room?
