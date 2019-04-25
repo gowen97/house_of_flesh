@@ -34,4 +34,5 @@ class Exit(DefaultExit):
                                         not be called if the attribute `err_traverse` is
                                         defined, in which case that will simply be echoed.
     """
-    pass
+    # def at__after_traverse(self, traversing_object, target_location):
+    #     traversing_object.cmdset.delete(UniqueCmdSet)

@@ -10,7 +10,7 @@ from evennia import default_cmds
 from evennia import syscmdkeys
 from evennia.contrib.menu_login import CmdUnloggedinLook
 from evennia.utils.evmenu import EvMenu
-from evennia.commands.default import CmdHelp
+#from evennia.commands.default import CmdHelp
 
 
 class Command(BaseCommand):
@@ -168,11 +168,11 @@ class CmdMore(Command):
 
     def func(self):
         #print stuff
-        caller.msg("You can type |Rlook|n to look at rooms or objects. Try typing |Rlook|n or |Rlook server daemon.|n")
-        caller.msg("You can type |Rtalk|n to talk to the server daemon. Try typing |Rtalk server daemon.|n")
-        caller.msg("You can go from place to place by typing the name of the exit. Try typing |Rto grace's room.|n")
-        caller.msg("Use |R@spawn|n to place symbols within the room that is generated for you after talking to the server daemon.")
-        caller.msg("Use |Rnote|n to leave a note behind when you visit someone else's room.")
+        self.caller.msg("You can type |rlook|n to look at rooms or objects. Try typing |rlook|n or |rlook server daemon.|n")
+        self.caller.msg("You can type |rtalk|n to talk to the server daemon. Try typing |rtalk server daemon.|n")
+        self.caller.msg("You can go from place to place by typing the name of the exit. Try typing |rto grace's room.|n")
+        self.caller.msg("Use |r@spawn|n to place symbols within the room that is generated for you after talking to the server daemon.")
+        self.caller.msg("Use |rnote|n to leave a note behind when you visit someone else's room.")
 
 
 

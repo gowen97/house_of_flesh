@@ -6,6 +6,9 @@ Rooms are simple containers that has no location of their own.
 """
 
 from evennia import DefaultRoom
+#from evennia import default_cmdsets
+from evennia import commands
+# from commands import unique_cmdset
 
 
 class Room(DefaultRoom):
@@ -49,13 +52,16 @@ class UniqueRoom(DefaultRoom):
             new_arrival (Object): the object that just entered this room.
             source_location (Object): the previous location of new_arrival.
         """
-        if new_arrival.has_account: #and not new_arrival.is_superuser:
+        #if new_arrival.has_account: #and not new_arrival.is_superuser:
             # this is a character
             # new arrival allows us to message the account in the room as it arrives
             # TODO make this message only show up to the person who created the room
             # check if name matches name in room
-            new_arrival.msg("|b Welcome to your room. Type @SPAWN to place objects in the room to represent a fantasy of yours.")
-            new_arrival.msg("|b What kind of fantasy? A sex dream, a desire, some kind of need or yearning.")
-            new_arrival.msg("|b What is lurking inside your entrails? Gesture to it here. No need to be explicit. Suggest it.")
+        new_arrival.msg("|r Welcome to your room. Type @SPAWN to place objects in the room to represent a fantasy of yours.")
+        new_arrival.msg("|r What kind of fantasy? A sex dream, a desire, some kind of need or yearning.")
+        new_arrival.msg("|r What is lurking inside your entrails? Gesture to it here. No need to be explicit. Suggest it.")
+        # new_arrival.cmdset.add(unique_cmdset.UniqueCmdSet)
+
+
 
     #when and how to message the player character to let them know about how to use their room?

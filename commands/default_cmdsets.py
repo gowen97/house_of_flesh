@@ -20,6 +20,7 @@ from evennia import default_cmds
 # from evennia.contrib.menu_login import UnloggedinCmdSet
 from command import CmdTestMenuNote
 from command import CmdMore
+# from evennia.commands.default.building import CmdSpawn
 
 
 

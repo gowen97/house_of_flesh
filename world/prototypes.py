@@ -82,7 +82,7 @@ NEON = {
     "strength": 5,
     "typeclass": "typeclasses.objects.Light",
     "desc": "Bright red neon in a tube.",
-    #"locks": "edit:Players" #not sure if this is right syntax
+    "locks": "get:none()" #not sure if this is right syntax
 }
 
 CANDLES = {
@@ -141,6 +141,14 @@ FLASHLIGHT = {
     "desc": "A sturdy flashlight."
 }
 
+SUNLIGHT = {
+    "prototype_key": "sunlight",
+    "key": "the light of the sun",
+    "strength": 5,
+    "typeclass": "typeclasses.objects.Light",
+    "desc": "The bright yellow sunlight."
+}
+
 #WEAPONS here
 #add permissions, aliases, and locks!
 DAGGER = {
@@ -170,6 +178,8 @@ BASEBALL_BAT = {
     "typeclass": "typeclasses.objects.Weapon",
     "desc": "A wooden baseball bat."
 }
+
+
 
 #where do i find more examples of weapons used in erotic contexts
 
@@ -261,6 +271,49 @@ BED = {
     "desc": "A plain bed with white sheets."
 }
 
+STAIRS = {
+    "prototype_key": "stairs",
+    "key": "a flight of stairs",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "A flight of stairs leading up."
+}
+
+CHAIR = {
+    "prototype_key": "chair",
+    "key": "a chair",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "A straight-back wooden chair."
+}
+
+RUG = {
+    "prototype_key": "rug",
+    "key": "a rug",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "A thick, ornate rug."
+}
+
+MIRROR = {
+    "prototype_key": "mirror",
+    "key": "a mirror",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "A highly reflective mirror."
+}
+
+WINDOW = {
+    "prototype_key": "window",
+    "key": "a window",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "An open window with gauzy curtains."
+}
+
+KEYHOLE = {
+    "prototype_key": "keyhole",
+    "key": "a keyhole",
+    "typeclass": "typeclasses.objects.Furniture",
+    "desc": "An keyhole set in the door."
+}
+
+
 #Misc
 
 CIGARETTES = {
@@ -289,4 +342,39 @@ HANDCUFFS = {
     "key": "a pack of cigarettes",
     "typeclass": "typeclasses.objects.Misc",
     "desc": "A rumpled silvery pack with a few cigarettes missing."
+}
+
+ROPE = {
+    "prototype_key": "rope",
+    "key": "a length of rope",
+    "typeclass": "typeclasses.objects.Misc",
+    "desc": "A length of thick black rope."
+}
+
+WATER = {
+    "prototype_key": "water",
+    "key": "a glass of water",
+    "typeclass": "typeclasses.objects.Misc",
+    "desc": "A tall glass of cool water."
+}
+
+DILDO = {
+    "prototype_key": "dildo",
+    "key": "a dildo",
+    "typeclass": "typeclasses.objects.Misc",
+    "desc": "A sex toy."
+}
+
+LINGERIE = {
+    "prototype_key": "lingerie",
+    "key": "a lingerie set",
+    "typeclass": "typeclasses.objects.Misc",
+    "desc": "A beautiful piece of lingerie."
+}
+
+FLOGGER = {
+    "prototype_key": "flogger",
+    "key": "a flogger",
+    "typeclass": "typeclasses.objects.Misc",
+    "desc": "A double-ended black leather flogger."
 }

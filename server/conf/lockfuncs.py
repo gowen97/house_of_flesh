@@ -28,3 +28,13 @@ lock functions from evennia.locks.lockfuncs.
 #    """
 #    print "%s tried to access %s. Access denied." % (accessing_obj, accessed_obj)
 #    return False
+
+def checkSpawn(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    called in lockstring with checkSpawn().
+    Only allow the user to spawn items in their own room.
+    """
+    if (accessing_obj.location.get_display_name(self)=="a room for %s" % (accessing_obj.get_display_name(self))):
+        return True
+    else:
+        return False
